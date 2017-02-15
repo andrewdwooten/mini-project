@@ -1,0 +1,11 @@
+<h1>Welcome to Robot World!</h1>
+  <h3>Please Login</h3>
+  <h4>...or create an account if you haven't yet</h4>
+
+  <%= form_for :session, url: login_path do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit "Login" %>
+  <% end %>
