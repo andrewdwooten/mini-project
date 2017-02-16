@@ -15,10 +15,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    if session[:user_id] == nil
-      redirect_to new_user_path
-    else
+    if current_user
       @user = current_user
+      @robots = current_user.robots
+    else
+      redirect_to new_user_path
     end
   end
 
