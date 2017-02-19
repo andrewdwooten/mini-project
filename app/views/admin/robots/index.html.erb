@@ -1,0 +1,13 @@
+<h1>Admin Robots Dashboard</h1>
+
+<ul>
+
+<% @robots.each do |robot| %>
+  <li>
+    <%= robot.name %> </br>
+    <%= robot.location %></br>
+    <%= robot.serial_no %> </br>
+    <%= link_to 'Update Robot', edit_admin_robot_path(current_user, robot) %>
+  </li>
+<% end %>
+</ul>

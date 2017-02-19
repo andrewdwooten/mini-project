@@ -1,0 +1,7 @@
+<h1>Robot Bank</h1>
+
+
+<%= form_tag(admin_robots_path, :method=>'post', :multipart => true) do %>
+  <%= number_field_tag "quantity" %>
+  <%= submit_tag 'Generate Robots' %>
+<% end %>
