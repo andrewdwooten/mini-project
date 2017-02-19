@@ -1,0 +1,10 @@
+<h1>Admin Dashboard</h1>
+<h4>Welcome <%= @admin.name %>!</h4>
+
+<ul>
+
+  <% @users.each do |user| %>
+    <li>
+      <%= user.name %>
+    </li>
+  <% end %>
