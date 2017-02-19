@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :robots, only: [:new, :index, :create, :edit, :update]
+    resources :robots, only: [:new, :index, :create, :edit, :update, :destroy]
   end
 
   get '/robots', to: 'robots#index'

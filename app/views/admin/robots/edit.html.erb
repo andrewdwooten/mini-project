@@ -1,8 +1,8 @@
 <h1>Edit <%= @robot.name %></h1>
 
 <%= form_tag(admin_robot_path(@robot), method: 'put', multipart: true) do %>
-  <%= text_field_tag 'name', value='#{@robot.name}' %>
-  <%= text_field_tag 'location', value='#{@robot.location}' %>
-  <%= text_field_tag 'serial_no', value='#{@robot.serial_no}' %>
+  <%= text_field_tag 'name', value=@robot.name %>
+  <%= text_field_tag 'location', value=@robot.location %>
+  <%= text_field_tag 'serial_no', value=@robot.serial_no %>
   <%= submit_tag 'Update Robot' %>
 <% end %>

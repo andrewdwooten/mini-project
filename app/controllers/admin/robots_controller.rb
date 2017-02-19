@@ -26,4 +26,9 @@ class Admin::RobotsController < Admin::BaseController
     redirect_to admin_robots_path
   end
 
+  def destroy
+    @robot = Robot.find(params[:id])
+    @robot.destroy
+    redirect_to admin_robots_path
+  end
 end
