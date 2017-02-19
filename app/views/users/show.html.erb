@@ -1,1 +1,12 @@
 <h1>Welcome..<%= @user.name %>..to Robot World!</h1>
+
+<h3>Your Robots!</h3>
+<ul>
+  <% @robots.each do |robot| %>
+    <li>
+      <%= robot.name %> </br>
+      <%= robot.location %> </br>
+      <%= robot.serial_no %>
+    </li>
+  <% end %>
+</ul>

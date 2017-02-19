@@ -1,0 +1,11 @@
+<h1>Available Robots</h1>
+<ul>
+
+  <% @robots.each do |robot| %>
+  <li>
+    <%= robot.name %> </br>
+    <%= robot.location %> </br>
+    <%= robot.serial_no %>
+  </li>
+  <% end %>
+</ul>
