@@ -12,4 +12,18 @@ class Admin::RobotsController < Admin::BaseController
     @robots = Robot.all
   end
 
+  def edit
+    @admin = current_user
+    @robot = Robot.find(params[:id])
+  end
+
+  def update
+    @robot = Robot.find(params[:id])
+    @robot.update_attributes(name: params[:name],
+                             location: params[:location],
+                             serial_no: params[:serial_no])
+
+    redirect_to admin_robots_path
+  end
+
 end
