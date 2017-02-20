@@ -5,7 +5,9 @@
   <li>
     <%= robot.name %> </br>
     <%= robot.location %> </br>
-    <%= robot.serial_no %>
+    <%= robot.serial_no %> </br>
+    <%= robot.cost %> </br>
+    <%= link_to robot_purchase_path(robot), "Buy Robot" %>
   </li>
   <% end %>
 </ul>
