@@ -3,7 +3,8 @@
   <head>
     <title>MiniProject</title>
     <%= csrf_meta_tags %>
-
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/styles.css"  media="screen,projection"/>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -14,6 +15,38 @@
         <%= value %>
       </div>
   <% end %>
+  <% if current_user && current_user.admin? %>
+    <nav>
+     <div class="nav-wrapper">
+       <a href="#!" class="brand-logo center">Robot Bank</a>
+       <ul class="right hide-on-med-and-down">
+         <li><a href="/admin/users">Users</a></li>
+         <li><a href="/admin/robots">Robots</a></li>
+       </ul>
+     </div>
+   </nav>
+ <% elsif current_user && !current_user.admin? %>
+   <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo center">Robot Bank</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/robots">Robots</a></li>
+        <li><a href="/logout" method='delete'>Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+<% else %>
+  <nav>
+   <div class="nav-wrapper">
+     <a href="#!" class="brand-logo center">Welcome to Robot Bank!</a>
+     <ul class="right hide-on-med-and-down">
+       <li><a href="/robots">Robots</a></li>
+     </ul>
+   </div>
+  </nav>
+<% end %>
+
+
     <%= yield %>
   </body>
 </html>
