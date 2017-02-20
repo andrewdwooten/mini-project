@@ -1,0 +1,11 @@
+<h1>Create a New User</h1>
+
+
+
+<%= form_tag(admin_users_path, :method=>'post', :multipart => true) do %>
+  <%= text_field_tag "name" %>
+  <%= email_field_tag "email" %>
+  <%= password_field_tag "password" %>
+  <%= password_field_tag "password_confirmation" %>
+  <%= submit_tag 'Create New User' %>
+<% end %>
