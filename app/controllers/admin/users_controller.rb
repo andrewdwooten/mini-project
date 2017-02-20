@@ -22,4 +22,10 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def adjust_points
+    user = User.find(params[:user])
+    User.adjust_points(user, params[:points_adjustment])
+    redirect_to admin_users_path
+  end
+
 end

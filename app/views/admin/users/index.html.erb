@@ -5,8 +5,14 @@
 
   <% @users.each do |user| %>
     <li>
-      <%= user.name %>
-      <%= user.email %>
+      <%= user.name %></br>
+      <%= user.email %></br>
+      Assigned: <%= user.assigned_points %></br>
+      Redeemed: <%= user.redeemed_points %></br>
+      <%= form_tag(users_points_path(user: user.id), :method=>'put', :multipart => false) do %>
+        <%= number_field_tag 'points_adjustment' %>
+        <%= submit_tag 'Adjust Points' %>
+      <% end %>
     </li>
   <% end %>
 </ul>

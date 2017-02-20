@@ -14,4 +14,9 @@ class User < ApplicationRecord
     user.save
   end
 
+  def self.adjust_points(user, amount)
+    user.assigned_points += amount.to_i
+    user.save
+  end
+
 end
