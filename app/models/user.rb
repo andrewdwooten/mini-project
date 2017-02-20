@@ -11,6 +11,7 @@ class User < ApplicationRecord
     robot.save
     user.assigned_points -= robot.cost
     user.redeemed_points += robot.cost
+    user.save
   end
 
 end
