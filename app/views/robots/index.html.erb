@@ -7,7 +7,7 @@
     <%= robot.location %> </br>
     <%= robot.serial_no %> </br>
     <%= robot.cost %> </br>
-    <%= link_to robot_purchase_path(robot), "Buy Robot" %>
+    <%= link_to 'Buy Robot', users_purchase_path(robot: robot.id), method: 'put' %>
   </li>
   <% end %>
 </ul>
