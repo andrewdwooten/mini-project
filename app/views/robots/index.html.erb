@@ -1,13 +1,12 @@
 <h1>Available Robots</h1>
 <ul>
-
   <% @robots.each do |robot| %>
-  <li>
-    <%= robot.name %> </br>
-    <%= robot.location %> </br>
-    <%= robot.serial_no %> </br>
-    <%= robot.cost %> </br>
-    <%= link_to 'Buy Robot', users_purchase_path(robot: robot.id), method: 'put' %>
-  </li>
+    <li>
+      <%= robot.name %> </br>
+      <%= robot.location %> </br>
+      <%= robot.serial_no %> </br>
+      <%= robot.cost %> </br>
+      <%= link_to 'Buy Robot', users_purchase_path(robot: robot.id), method: 'put' %>
+    </li>
   <% end %>
 </ul>
