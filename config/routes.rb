@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
 
   get '/robots', to: 'robots#index'
+  put '/users/purchase', to: 'users#purchase'
 end

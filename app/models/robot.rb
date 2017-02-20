@@ -5,7 +5,7 @@ class Robot < ApplicationRecord
   belongs_to :user
 
   def self.available
-    self.where(user_id: 1)
+    Robot.joins(:user).where(:users => {:role => 1})
   end
 
   def self.admin_restock(quantity, admin)

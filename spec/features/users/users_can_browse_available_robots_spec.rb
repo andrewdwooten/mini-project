@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'logged in user can browse available robots' do
   scenario 'current_user visits robots page and views all robots' do
-    store = User.create(name: 'Admin', email:'admin@test.com', password: 'admin')
+    store = User.create(name: 'Admin', email:'admin@test.com', password: 'admin', role: 1)
     user = User.create(name: 'test', email: 'test@test.com', password: 'password')
     store.robots.create(name: 'frank', location: 'earth', serial_no: '1a2b')
     store.robots.create(name: 'bill', location: 'mercury', serial_no: '1a3b')

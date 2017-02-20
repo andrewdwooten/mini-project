@@ -25,6 +25,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def purchase
+    robot = Robot.find(params[:robot])
+    User.purchase(robot, current_user)
+    redirect_to user_path(current_user)
+  end
+
 private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
