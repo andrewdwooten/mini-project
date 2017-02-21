@@ -1,18 +1,31 @@
-<h1>Admin Dashboard</h1>
+<h1>Admin Users Dashboard</h1>
 <h4>Welcome <%= @admin.name %>!</h4>
 
-<ul>
-
   <% @users.each do |user| %>
-    <li>
-      <%= user.name %></br>
-      <%= user.email %></br>
-      Assigned: <%= user.assigned_points %></br>
-      Redeemed: <%= user.redeemed_points %></br>
-      <%= form_tag(users_points_path(user: user.id), :method=>'put', :multipart => false) do %>
-        <%= number_field_tag 'points_adjustment' %>
-        <%= submit_tag 'Adjust Points' %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+    <div class="row">
+           <div class="col s6 m3">
+             <div class="card blue-grey darken-1">
+               <div class="card-content white-text">
+                 <span class="card-title"><%= user.name %></span>
+                 <ul>
+                   <li>
+                     <%= user.email %>
+                   </li>
+                   <li>
+                    Assigned Points: <%= user.assigned_points %>
+                   </li>
+                   <li>
+                     Redeemed Points: <%= user.redeemed_points %>
+                   </li>
+                 </ul>
+               </div>
+               <div class="card-action">
+                 <%= form_tag(users_points_path(user: user.id), :method=>'put', :multipart => false) do %>
+                   <%= number_field_tag 'points_adjustment' %>
+                   <%= submit_tag 'Adjust Points' %>
+                 <% end %>
+            </div>
+             </div>
+           </div>
+         </div>
+<% end  %>
