@@ -29,7 +29,7 @@
  <% elsif current_user && !current_user.admin? %>
    <nav>
     <div class="nav-wrapper">
-      <a href="/robots" class="brand-logo center">Robot Bank</a>
+      <a href='/users/<%= current_user.id %>' class="brand-logo center">Robot Bank</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/robots">Robots</a></li>
         <li><a href="/logout" method='delete'>Logout</a></li>

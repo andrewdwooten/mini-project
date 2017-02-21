@@ -7,11 +7,17 @@ class User < ApplicationRecord
   enum role: [:default, :admin]
 
   def self.purchase(robot, user)
-    robot.user = user
-    robot.save
-    user.assigned_points -= robot.cost
-    user.redeemed_points += robot.cost
-    user.save
+    if self.check_funds(robot.cost, user.assigned_points)
+      robot.user = user
+      robot.save
+      user.assigned_points -= robot.cost
+      user.redeemed_points += robot.cost
+      user.save
+    end
+  end
+
+  def self.check_funds(cost, funds)
+    cost <= funds
   end
 
   def self.adjust_points(user, amount)
