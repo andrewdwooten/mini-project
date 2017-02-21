@@ -1,12 +1,23 @@
 <h1>Available Robots</h1>
-<ul>
-  <% @robots.each do |robot| %>
-    <li>
-      <%= robot.name %> </br>
-      <%= robot.location %> </br>
-      <%= robot.serial_no %> </br>
-      <%= robot.cost %> </br>
-      <%= link_to 'Buy Robot', users_purchase_path(robot: robot.id), method: 'put' %>
-    </li>
-  <% end %>
-</ul>
+
+<% @robots.each do |robot| %>
+  <div class="col s7 m7">
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src='https://robohash.org/<%= robot.name %>'>
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <ul>
+              <li><%= robot.name %></li>
+              <li><%= robot.location %></li>
+              <li><%= robot.serial_no %></li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <%= button_to 'Buy Robot', users_purchase_path(robot: robot.id), method: 'put' %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
