@@ -7,7 +7,7 @@ feature 'admin can edit a robot' do
     robot = admin.robots.create(name: 'Test', location: 'home', serial_no: '123')
 
     visit admin_robots_path
-    click_link 'Update Robot'
+    click_button 'Update Robot'
 
     expect(current_path).to eq '/admin/robots/1/edit'
 

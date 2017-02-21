@@ -1,0 +1,42 @@
+<h1>Admin Dashboard</h1>
+<div class="row">
+       <div class="col s12 m6">
+         <div class="card blue-grey darken-1">
+           <div class="card-content white-text">
+             <span class="card-title">Robots</span>
+             <ul>
+               <li>
+                 Robots Available :<%= Robot.available.count %>
+               </li>
+               <li>
+                 Robots Purchased :<%= Robot.sold %>
+               </li>
+             </ul>
+           </div>
+         </div>
+       </div>
+     </div>
+
+<div class="row">
+       <div class="col s12 m6">
+         <div class="card blue-grey darken-1">
+           <div class="card-content white-text">
+             <span class="card-title">Users</span>
+             <ul>
+               <li>
+                 User Count: <%= User.not_admin_count %>
+               </li>
+               <li>
+                 Users Average Robot Count: <%= User.robot_avg %>
+               </li>
+               <li>
+                 Users Average Points Redeemed: <%= User.redemption_avg %>
+               </li>
+               <li>
+                 Users Average Points Assigned: <%= User.assigned_avg %>
+               </li>
+             </ul>
+           </div>
+         </div>
+       </div>
+     </div>

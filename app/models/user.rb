@@ -19,4 +19,20 @@ class User < ApplicationRecord
     user.save
   end
 
+  def self.robot_avg
+  end
+
+  def self.redemption_avg
+    average(:redeemed_points).to_i
+  end
+
+  def self.assigned_avg
+    average(:assigned_points).to_i
+  end
+
+  def self.not_admin_count
+    where(role: 0).count
+  end
+
+
 end
