@@ -9,7 +9,7 @@ feature 'user redeems points for robot' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit robots_path
-    click_link 'Buy Robot'
+    click_button 'Buy Robot'
 
     expect(current_path).to eq user_path(user)
     expect(page).to have_content('frank')

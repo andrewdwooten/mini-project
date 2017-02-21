@@ -28,6 +28,9 @@ class UsersController < ApplicationController
   def purchase
     robot = Robot.find(params[:robot])
     User.purchase(robot, current_user)
+    if robot.user.role == 'admin'
+      flash[:insufficient_funds] = "You don't have enough points for that"
+    end
     redirect_to user_path(current_user)
   end
 

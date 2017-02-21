@@ -1,6 +1,8 @@
 <h1>Admin Users Dashboard</h1>
 <h4>Welcome <%= @admin.name %>!</h4>
 
+<%= button_to "Create New Users", new_admin_user_path, method: 'get' %>
+
   <% @users.each do |user| %>
     <div class="row">
            <div class="col s6 m3">
