@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   get '/robots', to: 'robots#index'
   put '/users/purchase', to: 'users#purchase'
+  put '/users/points', to: 'admin/users#adjust_points'
+  get '/admin', to: 'admin/base#dashboard'
 end

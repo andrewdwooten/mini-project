@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password]) && user.admin?
       flash[:admin_welcome] = "Welcome Administrator"
       session[:user_id] = user.id
-      redirect_to admin_robots_path
+      redirect_to admin_path
     elsif user && user.authenticate(params[:session][:password])
       flash[:login_welcome] = "Welcome.  Shop for some Robots!"
       session[:user_id] = user.id

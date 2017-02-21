@@ -8,7 +8,7 @@ feature 'admin can delete robots' do
 
     visit admin_robots_path
 
-    expect { click_link 'Delete Robot'}.to change(Robot, :count).by(-1)
+    expect { click_button 'Delete Robot'}.to change(Robot, :count).by(-1)
 
     expect(current_path).to eq admin_robots_path
     expect(page).to_not have_content('Test')

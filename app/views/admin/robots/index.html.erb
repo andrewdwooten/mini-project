@@ -1,14 +1,27 @@
 <h1>Admin Robots Dashboard</h1>
 
-<ul>
+<%= button_to 'Restock Robots', new_admin_robot_path, method:'get' %>
+
 
 <% @robots.each do |robot| %>
-  <li>
-    <%= robot.name %> </br>
-    <%= robot.location %></br>
-    <%= robot.serial_no %> </br>
-    <%= link_to 'Update Robot', edit_admin_robot_path(robot) %>
-    <%= link_to 'Delete Robot', admin_robot_path(robot), method: 'delete' %>
-  </li>
+  <div class="col s7 m7">
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src='https://robohash.org/<%= robot.name %>'>
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <ul>
+              <li><%= robot.name %></li>
+              <li><%= robot.location %></li>
+              <li><%= robot.serial_no %></li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <%= button_to 'Update Robot', edit_admin_robot_path(robot), method: 'get' %>
+            <%= button_to 'Delete Robot', admin_robot_path(robot), method: 'delete' %>
+          </div>
+        </div>
+      </div>
+    </div>
 <% end %>
-</ul>

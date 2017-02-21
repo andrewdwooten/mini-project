@@ -16,4 +16,8 @@ class Robot < ApplicationRecord
     end
   end
 
+  def self.sold
+    Robot.joins(:user).where(:users => {:role => 0}).count
+  end
+
 end
