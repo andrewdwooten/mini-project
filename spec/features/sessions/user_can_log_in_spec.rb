@@ -30,7 +30,7 @@ feature 'user can log in' do
 
       expect(page).to have_content "Your login credentials were invalid.  Please try again."
       expect(current_path).to eq('/login')
-      expect(page).to have_content('Welcome to Robot World!  Please Login')
+      expect(page).to have_content("Welcome to Robot World! Create an account if you haven't yet")
     end
 
     scenario 'user is redirected to login page after bad name entry; flash message present' do
@@ -45,7 +45,7 @@ feature 'user can log in' do
 
       expect(page).to have_content "Your login credentials were invalid.  Please try again."
       expect(current_path).to eq('/login')
-      expect(page).to have_content('Welcome to Robot World!  Please Login')
+      expect(page).to have_content("Welcome to Robot World! Create an account if you haven't yet")
     end
   end
 end
